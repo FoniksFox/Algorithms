@@ -22,3 +22,10 @@ if(MSVC)
 else()
     target_compile_options(algorithms INTERFACE -Wall -Wextra -pedantic)
 endif()
+
+# Add test executables only if the test files exist
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests/searching/test_linear_search.cpp")
+    add_executable(test_linear_search tests/searching/test_linear_search.cpp)
+    target_link_libraries(test_linear_search algorithms)
+    add_test(NAME LinearSearchTest COMMAND test_linear_search)
+endif()
