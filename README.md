@@ -67,7 +67,7 @@ Some ideas of algorithms to be implemented (not all of them will be implemented 
 
 ### Graph Algorithms
 - [X] Depth-First Search (DFS) - O(V+E) graph traversal
-- [ ] Breadth-First Search (BFS) - O(V+E) level-order traversal
+- [X] Breadth-First Search (BFS) - O(V+E) level-order traversal
 - [ ] Dijkstra's Algorithm - O((V+E) log V) shortest path
 - [ ] Bellman-Ford Algorithm - O(VE) shortest path with negative weights
 - [ ] Floyd-Warshall Algorithm - O(V³) all-pairs shortest path
@@ -302,17 +302,18 @@ This project will demonstrate:
 
 ### Implemented Algorithms
 
-| Algorithm | Best Case | Average Case | Worst Case | Space Complexity | Properties |
-|-----------|-----------|--------------|------------|------------------|------------|
-| **Searching** | | | | | |
-| Linear Search | O(1) | O(n) | O(n) | O(1) | Works on unsorted data |
-| Binary Search | O(1) | O(log n) | O(log n) | O(1) | Requires sorted data |
-| **Sorting** | | | | | |
-| Bubble Sort | O(n) | O(n²) | O(n²) | O(1) | Stable, adaptive |
-| Merge Sort | O(n log n) | O(n log n) | O(n log n) | O(n) | Stable, not adaptive |
-| Quick Sort | O(n log n) | O(n log n) | O(n²) | O(log n) | Not stable, in-place |
-| **Graph** | | | | | |
-| DFS | O(V + E) | O(V + E) | O(V + E) | O(V) | Stack-based traversal |
+| Algorithm     | Best Case | Average Case  | Worst Case    | Space Complexity  | Properties                |
+|---------------|-----------|---------------|---------------|-------------------|---------------------------|
+| **Searching** |           |               |               |                   |                           |
+| Linear Search | O(1)      | O(n)          | O(n)          | O(1)              | Works on unsorted data    |
+| Binary Search | O(1)      | O(log n)      | O(log n)      | O(1)              | Requires sorted data      |
+| **Sorting**   |           |               |               |                   |                           |
+| Bubble Sort   | O(n)      | O(n²)         | O(n²)         | O(1)              | Stable, adaptive          |
+| Merge Sort    | O(n log n)| O(n log n)    | O(n log n)    | O(n)              | Stable, not adaptive      |
+| Quick Sort    | O(n log n)| O(n log n)    | O(n²)         | O(log n)          | Not stable, in-place      |
+| **Graph**     |           |               |               |                   |                           |
+| DFS           | O(V + E)  | O(V + E)      | O(V + E)      | O(V)              | Stack-based traversal     |
+| BFS           | O(V + E)  | O(V + E)      | O(V + E)      | O(V)              | Queue-based traversal     |
 
 ### Algorithm Properties Explained
 
