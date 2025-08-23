@@ -66,7 +66,7 @@ Some ideas of algorithms to be implemented (not all of them will be implemented 
 - [ ] Ternary Search - O(log₃ n) divide-and-conquer variant
 
 ### Graph Algorithms
-- [ ] Depth-First Search (DFS) - O(V+E) graph traversal
+- [X] Depth-First Search (DFS) - O(V+E) graph traversal
 - [ ] Breadth-First Search (BFS) - O(V+E) level-order traversal
 - [ ] Dijkstra's Algorithm - O((V+E) log V) shortest path
 - [ ] Bellman-Ford Algorithm - O(VE) shortest path with negative weights
