@@ -48,18 +48,18 @@ This project is part of the Weekly-Projects series. The goal is to implement cla
 Some ideas of algorithms to be implemented (not all of them will be implemented in the one-week period)
 
 ### Sorting Algorithms
-- [ ] Bubble Sort - O(n²) comparison-based sorting
+- [X] Bubble Sort - O(n²) comparison-based sorting
 - [ ] Selection Sort - O(n²) in-place sorting algorithm
 - [ ] Insertion Sort - O(n²) adaptive sorting algorithm
-- [ ] Merge Sort - O(n log n) divide-and-conquer stable sort
+- [X] Merge Sort - O(n log n) divide-and-conquer stable sort
 - [ ] Quick Sort - O(n log n) average case in-place sort
 - [ ] Heap Sort - O(n log n) in-place sorting using binary heap
 - [ ] Radix Sort - O(nk) non-comparison integer sorting
 - [ ] Counting Sort - O(n+k) stable integer sorting algorithm
 
 ### Search Algorithms
-- [ ] Linear Search - O(n) sequential search
-- [ ] Binary Search - O(log n) divide-and-conquer search
+- [X] Linear Search - O(n) sequential search
+- [X] Binary Search - O(log n) divide-and-conquer search
 - [ ] Interpolation Search - O(log log n) for uniformly distributed data
 - [ ] Exponential Search - O(log n) for unbounded/infinite arrays
 - [ ] Jump Search - O(√n) block-based search algorithm
@@ -170,6 +170,7 @@ Algorithms/
 │   ├── implementation_notes.md # Design decisions and trade-offs
 │   └── usage_examples.md       # Code examples and best practices
 ├── CMakeLists.txt              # CMake build configuration
+├── Doxyfile                    # Doxygen configuration
 ├── LICENSE
 └── README.md                   # This file
 ```
@@ -296,6 +297,38 @@ This project will demonstrate:
 **Benchmark-Driven Development**: Planned to validate theoretical complexity with actual performance measurements using custom benchmarking utilities.
 
 **Template Specializations**: Will provide optimized specializations for common types (integers, strings) while maintaining generic implementations.
+
+## Algorithm Complexity Reference
+
+### Implemented Algorithms
+
+| Algorithm | Best Case | Average Case | Worst Case | Space Complexity | Properties |
+|-----------|-----------|--------------|------------|------------------|------------|
+| **Searching** | | | | | |
+| Linear Search | O(1) | O(n) | O(n) | O(1) | Works on unsorted data |
+| Binary Search | O(1) | O(log n) | O(log n) | O(1) | Requires sorted data |
+| **Sorting** | | | | | |
+| Bubble Sort | O(n) | O(n²) | O(n²) | O(1) | Stable, adaptive |
+| Merge Sort | O(n log n) | O(n log n) | O(n log n) | O(n) | Stable, not adaptive |
+| Quick Sort | O(n log n) | O(n log n) | O(n²) | O(log n) | Not stable, in-place |
+| **Graph** | | | | | |
+| DFS | O(V + E) | O(V + E) | O(V + E) | O(V) | Stack-based traversal |
+
+### Algorithm Properties Explained
+
+**Stable**: Equal elements maintain their relative order after sorting  
+**Adaptive**: Performance improves on nearly sorted data  
+**In-place**: Requires only O(1) or O(log n) extra memory  
+**Comparison-based**: Uses element comparisons for ordering decisions
+
+### When to Use Each Algorithm
+
+**Linear Search**: Small datasets, unsorted data, simple implementation needed  
+**Binary Search**: Large sorted datasets, repeated searches, logarithmic performance required  
+**Bubble Sort**: Educational purposes, small datasets, stability required  
+**Merge Sort**: Large datasets, stability required, predictable performance needed  
+**Quick Sort**: Large datasets, average case performance, in-place sorting preferred  
+**DFS**: Graph connectivity, pathfinding, topological ordering
 
 ## Notes and Reflections
 

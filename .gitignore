@@ -41,7 +41,39 @@
 *.dwo
 
 # CMake build files
-/build
+/build/
+build/
 
 # VSCode settings
 .vscode/
+
+# Generated documentation
+docs/
+html/
+latex/
+*.tag
+
+# Doxygen warnings file
+doxygen_warnings.txt
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# IDE files
+*.user
+*.vcxproj.user
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+# Clang tools
+.clangd/
+compile_commands.json
+
+# Coverage files
+*.gcov
+*.gcda
+*.gcno
+coverage/

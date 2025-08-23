@@ -2,19 +2,56 @@
 
 #include <iterator>
 #include <functional>
+
 namespace algorithms {
 namespace searching {
     /**
-     * @brief Performs a linear search on a range of elements.
-     * @tparam ForwardIt Iterator type.
-     * @tparam T Type of the elements to search for.
-     * @param first The beginning of the range.
-     * @param last The end of the range.
-     * @param value The value to search for.
-     * @return The iterator to the found element, or last if not found.
+     * @defgroup algorithms Algorithms Library
+     * @brief Modern C++ implementation of fundamental algorithms
+     */
+    
+    /**
+     * @defgroup searching Searching Algorithms
+     * @brief Collection of searching algorithms for sorted and unsorted data
+     * @ingroup algorithms
+     * @{
+     */
+
+    /**
+     * @brief Performs linear search on a range of elements.
      * 
-     * Time Complexity: O(n)
-     * Space Complexity: O(1)
+     * Linear search sequentially checks each element in the range until the target
+     * value is found or the end of the range is reached. Works on any forward iterator.
+     * 
+     * @tparam Iterator Forward iterator type that must provide:
+     *   - Forward iteration capabilities
+     *   - Value type must be equality comparable with T
+     * @tparam T Value type to search for, must be equality comparable with iterator's value type
+     * 
+     * @param first Iterator to the beginning of the range
+     * @param last Iterator to the end of the range
+     * @param value The value to search for
+     * @return Iterator to the found element, or last if not found
+     * 
+     * @par Complexity:
+     * - Time: O(n) where n is the distance between first and last
+     * - Space: O(1) auxiliary space
+     * 
+     * @par Algorithm Properties:
+     * - Works on unsorted data
+     * - Sequential access pattern (cache-friendly for arrays)
+     * - Early termination when element is found
+     * 
+     * @par Example:
+     * ```cpp
+     * std::vector<int> data = {1, 3, 5, 7, 9};
+     * auto it = algorithms::searching::linear_search(data.begin(), data.end(), 5);
+     * if (it != data.end()) {
+     *     std::cout << "Found " << *it << " at position " << std::distance(data.begin(), it);
+     * }
+     * ```
+     * 
+     * @ingroup searching
      */
     template<typename Iterator, typename T>
     constexpr Iterator linear_search(Iterator first, Iterator last, const T& value) {
@@ -33,17 +70,41 @@ namespace searching {
     }
 
     /**
-     * @brief Performs a linear search on a range of elements using a predicate.
-     * @tparam ForwardIt Iterator type.
-     * @tparam T Type of the elements to search for.
-     * @tparam Pred Type of the predicate function.
-     * @param first The beginning of the range.
-     * @param last The end of the range.
-     * @param pred The predicate function to test each element.
-     * @return The iterator to the found element, or last if not found.
-     *
-     * Time Complexity: O(n)
-     * Space Complexity: O(1)
+     * @brief Performs linear search with a custom predicate function.
+     * 
+     * Linear search that finds the first element satisfying a given predicate.
+     * This is useful for more complex search criteria than simple equality.
+     * 
+     * @tparam Iterator Forward iterator type that must provide:
+     *   - Forward iteration capabilities  
+     *   - Value type must be compatible with the predicate
+     * @tparam Predicate Unary predicate type compatible with `bool(ValueType)`
+     * 
+     * @param first Iterator to the beginning of the range
+     * @param last Iterator to the end of the range
+     * @param pred Predicate function that returns true for the desired element
+     * @return Iterator to the first element satisfying the predicate, or last if none found
+     * 
+     * @par Complexity:
+     * - Time: O(n) where n is the distance between first and last
+     * - Space: O(1) auxiliary space
+     * 
+     * @par Algorithm Properties:
+     * - Works on unsorted data
+     * - More flexible than value-based search
+     * - Early termination when matching element is found
+     * 
+     * @par Example:
+     * ```cpp
+     * std::vector<int> data = {1, 3, 5, 7, 9};
+     * auto it = algorithms::searching::linear_search_if(data.begin(), data.end(), 
+     *                                                  [](int x) { return x > 6; });
+     * if (it != data.end()) {
+     *     std::cout << "First element > 6: " << *it;  // Output: 7
+     * }
+     * ```
+     * 
+     * @ingroup searching
      */
 
     template<typename Iterator, typename Pred>
@@ -61,5 +122,8 @@ namespace searching {
 
         return last;
     }
-}
-}
+
+    /** @} */ // end of searching group
+
+} // namespace searching
+} // namespace algorithms

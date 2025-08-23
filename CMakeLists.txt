@@ -23,6 +23,12 @@ else()
     target_compile_options(algorithms INTERFACE -Wall -Wextra -pedantic)
 endif()
 
+# Doxygen integration
+find_package(Doxygen)
+if(DOXYGEN_FOUND)
+    doxygen_add_docs(docs ${CMAKE_CURRENT_SOURCE_DIR}/include)
+endif()
+
 # Add test executables only if the test files exist
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests/searching/test_linear_search.cpp")
     add_executable(test_linear_search tests/searching/test_linear_search.cpp)
