@@ -65,3 +65,9 @@ if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests/graph/test_breadth_first_search.cpp
     target_link_libraries(test_breadth_first_search algorithms)
     add_test(NAME BreadthFirstSearchTest COMMAND test_breadth_first_search)
 endif()
+
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests/dynamic_programming/test_fibonacci.cpp")
+    add_executable(test_fibonacci tests/dynamic_programming/test_fibonacci.cpp)
+    target_link_libraries(test_fibonacci algorithms)
+    add_test(NAME FibonacciTest COMMAND test_fibonacci)
+endif()
