@@ -77,7 +77,7 @@ Some ideas of algorithms to be implemented (not all of them will be implemented 
 - [ ] Disjoint Set Union (DSU) - More of a data structure, but serves the same purpose as other algorithms in many situations
 
 ### Dynamic Programming
-- [ ] Fibonacci Sequence - O(n) bottom-up and memoization
+- [X] Fibonacci Sequence - O(n) bottom-up
 - [ ] Longest Common Subsequence - O(mn) sequence alignment
 - [ ] Knapsack Problem - O(nW) 0/1 and unbounded variants
 - [ ] Edit Distance - O(mn) string transformation
